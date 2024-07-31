@@ -1,0 +1,25 @@
+{
+  "name": "api-bke-express",
+  "version": "1.0.0",
+  "description": "api node com framework express",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroHigorr/NodeExpress.git"
+  },
+  "keywords": [
+    "api",
+    "node",
+    "express",
+    "zod"
+  ],
+  "author": "Pedro Higor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedroHigorr/NodeExpress/issues"
+  },
+  "homepage": "https://github.com/PedroHigorr/NodeExpress#readme"
+}
