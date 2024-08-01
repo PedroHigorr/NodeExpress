@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "api node com framework express",
   "main": "src/server.js",
+  "type": "module",
   "scripts": {
-    "start": "src/server.js"
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
   },
   "repository": {
     "type": "git",
