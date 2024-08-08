@@ -1,5 +1,14 @@
+import userModel from "../../models/userModel.js"
+
 const userList = (req, res) => {
-    res.json({message: "List of users: "})
+
+    const users = userModel.getAll()
+
+    res.json({
+        message: "List of users: ",
+        users
+        })
+
 }
 
 export default userList
