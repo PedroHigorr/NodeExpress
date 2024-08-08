@@ -1,22 +1,13 @@
-
+import userRouter from "./routers/userRouter.js"
+import productRouter from "./routers/productRouter.js"
 import express from "express"
 
 const app = express()
-
 const port = 3000
 
-app.get('/', (req, res)=>{
-    res.send('Hello World')
-})
+app.use('/user', userRouter)
 
-app.get('/user', (req, res) => {
-    res.json({
-        nome: "Pedro",
-        email: "Pedro.Higor92@gmail.com",
-        religiao: "Rock",
-        Sexo: "Masculino"
-    })
-})
+app.use('/product', productRouter)
 
 app.listen(port, ()=>{
     console.log(`Servidor rodando no http://localhost:3000`)
