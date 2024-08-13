@@ -10,5 +10,5 @@ app.use('/user', userRouter)
 app.use('/product', productRouter)
 
 app.listen(port, ()=>{
-    console.log(`Servidor rodando no http://localhost:3000`)
+    console.log(`Server listening on: http://localhost:3000`)
 })

@@ -1,35 +1,23 @@
 import express from 'express'
+import productByID from '../controllers/product/productByID.js'
+import registerProduct from '../controllers/product/registerProduct.js'
+import deleteProduct from '../controllers/product/deleteProduct.js'
+import listProduct from '../controllers/product/ListProduct.js'
+import editProduct from '../controllers/product/editProduct.js'
+import editProductName from '../controllers/product/editProductName.js'
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    res.json({
-        message: 'Route GET /product'
-    })
-})
+router.get('/', productByID)
 
-router.post('/', (req, res) => {
-    res.json({
-        message: 'Route POST /product'
-    })
-})
+router.get('/list', listProduct)
 
-router.delete('/', (req, res) => {
-    res.json({
-        message: 'Route DELETE /product'
-    })
-})
+router.post('/', registerProduct)
 
-router.put('/', (req, res) => {
-    res.json({
-        message: 'Route PUT /product'
-    })
-})
+router.delete('/', deleteProduct)
 
-router.patch('/', (req, res) => {
-    res.json({
-        message: 'Route PATCH /product'
-    })
-})
+router.put('/', editProduct)
+
+router.patch('/', editProductName)
 
 export default router
