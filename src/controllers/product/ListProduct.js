@@ -1,9 +1,12 @@
-const listProduct = (req, res) => {
+import { listProducts } from "../../models/productModel.js"
+
+const ProductsList = async (req, res) => {
     
-    res.json({
-        message: "List of products charged successfully!"
-    })
+    const products = await listProducts()
     
+    res.json(products)      
+    
+  
 }
 
-export default listProduct
+export default ProductsList
