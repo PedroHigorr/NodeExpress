@@ -1,14 +1,15 @@
 import userRouter from "./routers/userRouter.js"
 import productRouter from "./routers/productRouter.js"
 import express from "express"
+import { PORT } from "./config.js"
 
 const app = express()
-const port = 3000
+
 
 app.use('/user', userRouter)
 
 app.use('/product', productRouter)
 
-app.listen(port, ()=>{
+app.listen(PORT, ()=>{
     console.log(`Server listening on: http://localhost:3000`)
 })
