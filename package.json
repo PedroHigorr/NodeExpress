@@ -8,8 +8,8 @@
     "start": "node src/server.js",
     "dev": "node --env-file=.env --watch src/server.js",
     "prisma:pull": "npx prisma db pull",
-    "prima:push": "npx prisma db push",
-    "prisma:generate": "npx prisma generate"
+    "prisma:generate": "npx prisma generate",
+    "prima:push": "npx prisma db push"
   },
   "repository": {
     "type": "git",
