@@ -10,14 +10,14 @@ const router = express.Router()
 
 router.get('/list', userList)
 
-router.get('/', userByID)
+router.get('/:id', userByID)
 
 router.post('/', createUser)
 
-router.put('/', editUser)
+router.put('/:id', editUser)
 
-router.patch('/', editUserName)
+router.patch('/:id', editUserName)
 
-router.delete('/', deleteUser)
+router.delete('/:id', deleteUser)
 
 export default router

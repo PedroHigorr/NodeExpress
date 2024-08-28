@@ -1,11 +1,9 @@
-// import { listProducts } from "../../models/productModel.js"
+import { listProducts } from "../../models/productModel.js"
 
 const ProductsList = async (req, res) => {
     
-    // const products = await listProducts()
-    const products = ["teste"]
+    const products = await listProducts()
     res.json(products)      
-    
   
 }
 

@@ -5,6 +5,11 @@ import { ENVIRONMENT, PORT, HOST } from "./config.js"
 
 const app = express()
 
+app.use(express.json())
+
+app.get('/', (req, res) => {
+    res.json({message: "Api on"})
+})
 
 app.use('/user', userRouter)
 
