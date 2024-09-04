@@ -1,8 +1,20 @@
-const deleteProduct = (req, res) => {
+import { delProduct } from "../../models/productModel.js"
 
-    res.json({
-        message: "Deleting product..."
-    })
+const deleteProduct = async (req, res) => {
+
+    const {id} = req.params
+
+    const product = await delProduct(+id)
+
+    if(!product){
+        res.status(404).json({
+            Error: 'User not found'
+        })
+    }else{
+        res.json({
+            Success: 'User deleted!'
+        })
+    }
 
 }
 

@@ -8,16 +8,16 @@ import editProductName from '../controllers/product/editProductName.js'
 
 const router = express.Router()
 
-router.get('/', productByID)
+router.get('/:id', productByID)
 
 router.get('/list', listProduct)
 
 router.post('/', registerProduct)
 
-router.delete('/', deleteProduct)
+router.delete('/:id', deleteProduct)
 
-router.put('/', editProduct)
+router.put('/:id', editProduct)
 
-router.patch('/', editProductName)
+router.patch('/:id', editProductName)
 
 export default router
