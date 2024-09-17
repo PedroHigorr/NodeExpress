@@ -1,6 +1,36 @@
 import {PrismaClient} from '@prisma/client'
+import { z } from 'zod'
 
 const prisma = new PrismaClient()
+
+const userSchema = z.object({
+    id: z.number({message: "O ID deve ser um número inteiro"})
+        .positive({message: "O ID deve ser um número positivo"}),
+    name: z.string({
+        required_error: "O nome é um campo obrigatório",
+        invalid_type_error: "O nome deve ser uma String"})
+        .min(3)
+        .max(99),
+    email: z.string()
+        .email()
+        .max(200),
+    pass: z.string({
+        required_error: "A senha é um campo obrigatório",
+        invalid_type_error: "A senha deve ser uma String"})
+        .min(6)
+        .max(256)
+
+})
+
+export const validateUserToCreate = (user) => {
+
+    const partialUserSchema = userSchema.partial({
+        id: true
+    })
+   
+    return partialUserSchema.safeParse(user)
+
+} 
 
 export const getAllUsers = async () => {
 

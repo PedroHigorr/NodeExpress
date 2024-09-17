@@ -5,9 +5,11 @@ import deleteProduct from '../controllers/product/deleteProduct.js'
 import listProduct from '../controllers/product/ListProduct.js'
 import editProduct from '../controllers/product/editProduct.js'
 import editProductName from '../controllers/product/editProductName.js'
+import logger from '../middlewares/logger.js'
 
 const router = express.Router()
 
+router.use(logger)
 router.get('/:id', productByID)
 
 router.get('/list', listProduct)

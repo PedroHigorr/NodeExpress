@@ -5,6 +5,8 @@ import { ENVIRONMENT, PORT, HOST } from "./config.js"
 
 const app = express()
 
+app.use(logger)
+
 app.use(express.json())
 
 app.get('/', (req, res) => {
@@ -14,6 +16,8 @@ app.get('/', (req, res) => {
 app.use('/user', userRouter)
 
 app.use('/product', productRouter)
+
+
 
 app.listen(PORT, ()=>{
     console.log(
